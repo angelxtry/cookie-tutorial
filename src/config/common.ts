@@ -10,7 +10,7 @@ type CommonConfig = {
   jwtSecret: string;
 };
 
-// const CORS_URL = [''];
+const CORS_URL = ['cookie-tutorial.gomistore.com'];
 
 export const common: CommonConfig = {
   port: (process.env.PORT && parseInt(process.env.PORT, 10)) || 8080,
@@ -21,6 +21,6 @@ export const common: CommonConfig = {
   jwtSecret: process.env.JWT_SECRET || 'secret',
 };
 
-// if (process.env.NODE_ENV === 'production') {
-//   common.corsUrl = CORS_URL;
-// }
+if (process.env.NODE_ENV === 'production') {
+  common.corsUrl = CORS_URL;
+}
