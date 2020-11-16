@@ -26,7 +26,7 @@ export const login = async (req: Request, res: Response) => {
 
     res.cookie('authcookie', token, {
       maxAge: 900000,
-      httpOnly: true,
+      // httpOnly: true,
       sameSite: 'none',
       domain: '.cookie-tutorial.gomistore.com',
       secure: process.env.NODE_ENV === 'production' ? true : false,
