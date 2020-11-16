@@ -28,7 +28,7 @@ export const login = async (req: Request, res: Response) => {
       maxAge: 900000,
       // httpOnly: true,
       sameSite: 'none',
-      domain: '.cookie-tutorial.gomistore.com',
+      domain: 'cookie-tutorial.gomistore.com',
       secure: process.env.NODE_ENV === 'production' ? true : false,
     });
 
