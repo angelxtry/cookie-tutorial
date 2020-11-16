@@ -29,7 +29,7 @@ export const login = async (req: Request, res: Response) => {
       // httpOnly: true,
       sameSite: 'none',
       domain: 'gomistore.com',
-      secure: process.env.NODE_ENV === 'production' ? true : false,
+      secure: true,
     });
 
     return res.status(200).send({
