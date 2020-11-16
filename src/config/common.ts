@@ -13,7 +13,7 @@ type CommonConfig = {
 // const CORS_URL = [''];
 
 export const common: CommonConfig = {
-  port: (process.env.PORT && parseInt(process.env.PORT, 10)) || 8888,
+  port: (process.env.PORT && parseInt(process.env.PORT, 10)) || 8080,
   env: process.env.NODE_ENV || 'development',
 
   corsUrl: true,
