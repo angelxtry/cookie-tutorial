@@ -28,7 +28,8 @@ export const login = async (req: Request, res: Response) => {
       maxAge: 900000,
       httpOnly: true,
       sameSite: 'none',
-      domain: '.localhost:8888',
+      domain: '.gomistore.com',
+      secure: true,
     });
 
     return res.status(200).send({
