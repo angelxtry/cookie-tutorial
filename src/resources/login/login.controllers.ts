@@ -28,8 +28,8 @@ export const login = async (req: Request, res: Response) => {
       maxAge: 900000,
       httpOnly: true,
       sameSite: 'none',
-      domain: '.gomistore.com',
-      secure: true,
+      domain: '.cookie-tutorial.gomistore.com',
+      secure: process.env.NODE_ENV === 'production' ? true : false,
     });
 
     return res.status(200).send({
