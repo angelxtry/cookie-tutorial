@@ -1,9 +1,12 @@
 import { Router } from 'express';
 import { checkAuth } from '../../middlewares';
+import { login } from './login.controllers';
 import { me } from './me.controllers';
 
 const router = Router();
 
-router.get('/', checkAuth, me);
+router.post('/login', login);
+
+router.get('/me', checkAuth, me);
 
 export default router;

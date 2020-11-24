@@ -4,8 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import { common, logger, stream } from './config';
-import loginRouter from './resources/login/login.router';
-import meRouter from './resources/me/me.router';
+import userRouter from './resources/user/user.router';
 import companyRouter from './resources/company/company.router';
 
 const app = express();
@@ -25,13 +24,13 @@ app.use('/health', (_, res) => {
   res.status(200).send('health check');
 });
 
-app.use('/login', loginRouter);
-app.use('/me', meRouter);
+app.use('/user', userRouter);
 app.use('/company', companyRouter);
 
 const { port } = common;
 export const start = () => {
   app.listen(port, () => {
+    console.log(`${process.env.NODE_ENV}`);
     logger.info(`server is on ${port}`);
   });
 };

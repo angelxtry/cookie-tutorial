@@ -8,7 +8,8 @@
     "build": "babel src --out-dir dist --extensions \".ts\" --source-maps inline",
     "start": "NODE_ENV=production node dist/index.js",
     "restart": "yarn build && yarn start",
-    "dev": "nodemon --exec yarn restart --watch src -e ts",
+    "test": "yarn build && NODE_ENV=development node dist/index.js",
+    "dev": "nodemon --exec yarn test --watch src -e ts",
     "prod": "yarn build && pm2 start dist/index.js --name cookie-tutorial --max-memory-restart 800M"
   },
   "keywords": [],
@@ -23,8 +24,6 @@
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "pm2": "^4.5.0",
-    "request": "^2.88.2",
-    "url": "^0.11.0",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.0"
   },

@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { common } from '../../config';
-import { USERS } from '../userData';
+import { USERS } from './userData';
 
 interface LoginRequest {
   email: string;
@@ -10,6 +10,7 @@ interface LoginRequest {
 
 export const login = async (req: Request, res: Response) => {
   const { email, password }: LoginRequest = req.body;
+  console.log('login - email, password', email, password);
 
   try {
     const existedUser = USERS.filter((user) => user.email === email)[0];
@@ -20,6 +21,7 @@ export const login = async (req: Request, res: Response) => {
 
     const payload = { user: { email } };
 
+    console.log('login-payload:', payload);
     const token = jwt.sign(payload, common.jwtSecret, {
       expiresIn: '1d',
     });

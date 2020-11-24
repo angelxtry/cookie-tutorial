@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { COMPANY_INFO } from '../companyData';
+import { COMPANY_INFO } from './companyData';
 
 export const getCompanyInfo = async (_: Request, res: Response) => {
   // console.log('me!!!', res.locals.decoded);

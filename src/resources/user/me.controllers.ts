@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { USERS } from '../userData';
+import { USERS } from './userData';
 
 export const me = async (_: Request, res: Response) => {
   console.log('me!!!', res.locals.decoded);
