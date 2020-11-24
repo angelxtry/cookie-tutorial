@@ -27,11 +27,11 @@ export const login = async (req: Request, res: Response) => {
     });
 
     res.cookie('authcookie', token, {
-      maxAge: 900000,
+      // maxAge: 900000,
       // httpOnly: true,
-      sameSite: 'none',
-      domain: 'gomistore.com',
-      secure: true,
+      // sameSite: 'none',
+      // domain: 'gomistore.com',
+      // secure: true,
     });
 
     return res.status(200).send({
