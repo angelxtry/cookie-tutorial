@@ -13,9 +13,9 @@ export const USERS: User[] = [
     message: 'Hello Cookie',
   },
   {
-    email: 'admin@gomicorp.com',
-    password: 'admin123',
-    name: 'admin',
-    message: 'Admin Cookie',
+    email: 'gomi@gomicorp.com',
+    password: 'gomi123',
+    name: 'gomi',
+    message: 'Hello Gomi',
   },
 ];
