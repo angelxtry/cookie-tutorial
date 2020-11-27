@@ -18,7 +18,7 @@ export const checkAuth = (req: Request, res: Response, next: NextFunction) => {
 
     return next();
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return res.sendStatus(500);
   }
 };
